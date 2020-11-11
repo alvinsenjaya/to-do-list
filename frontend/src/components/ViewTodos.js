@@ -25,13 +25,13 @@ function Todos() {
 		}
 	}
 
-	const markComplete = (id) => {
-		axios.put(`http://localhost:3001/api/todo/${id}`);
+	const markComplete = async (id) => {
+		await axios.put(`http://localhost:3001/api/todo/${id}`);
 		setTodoChange(!todoChange);
 	}
 
-	const delTodo = (id) => {
-		axios.delete(`http://localhost:3001/api/todo/${id}`);
+	const delTodo = async (id) => {
+		await axios.delete(`http://localhost:3001/api/todo/${id}`);
 		setTodoChange(!todoChange);
 	}
 

@@ -4,9 +4,9 @@ import axios from 'axios';
 function AddTodo({todoChange, setTodoChange}) {
 	const [title, setTitle] = useState('');
 
-	const onSubmit = (e) => {
+	const onSubmit = async (e) => {
 		e.preventDefault();
-		axios.post('http://localhost:3001/api/todo', {title});
+		await axios.post('http://localhost:3001/api/todo', {title});
 		setTitle('');
 		setTodoChange(!todoChange);
 	}
